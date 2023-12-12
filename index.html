@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script type="module" src="/src/css/locals.css"></script>
+    <script src="https://diapazoncenter.com/engine/classes/js/jquery3.js?v=1"></script>
+    <script src="https://diapazoncenter.com/engine/classes/js/jqueryui3.js?v=1"></script>
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div class="page">
+      {{> components/header }}
+
+      <div class="main-scroll" data-scroll-container>
+        <main>{{> pages/mainpage }}</main>
+        {{> components/footer }}
+      </div>
+    </div>
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
+</html>

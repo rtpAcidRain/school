@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.text-24m {
+  @apply font-inter sm:font-manrope;
+}
+
+.text-11eb {
+  text-transform: uppercase;
+  font-feature-settings: "ss01" on;
+}
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1.25rem;
+  padding-left: 1.25rem;
+}
+
+@screen sm {
+  .sm\:text-24m {
+    @apply font-inter;
+  }
+
+  .sm\:text-11eb {
+    text-transform: uppercase;
+    font-feature-settings: "ss01" on;
+  }
+
+  .container {
+    max-width: 1406px;
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+  }
+
+  .sm\:container {
+    width: 100%;
+    max-width: 1406px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+  }
+}
