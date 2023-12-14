@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="isSomethinOpened">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,9 +7,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-    <script type="module" src="/src/css/locals.css"></script>
-    <script src="https://diapazoncenter.com/engine/classes/js/jquery3.js?v=1"></script>
-    <script src="https://diapazoncenter.com/engine/classes/js/jqueryui3.js?v=1"></script>
+    <script type="module" src="./locals.css"></script>
     <title>Vite App</title>
   </head>
   <body>
@@ -19,6 +17,489 @@
       <div class="main-scroll" data-scroll-container>
         <main>{{> pages/mainpage }}</main>
         {{> components/footer }}
+      </div>
+    </div>
+    <div class="modal modal--right" id="modalForm">
+      <div class="modal__container">
+        <button class="modal__close">
+          <svg
+            viewBox="0 0 18 18"
+            fill="none"
+            xmlns="https://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13.3643 13.3633L8.97642 8.97544L4.63706 4.63608"
+              stroke-width="1.01818"
+              stroke-linecap="round"
+            />
+            <path
+              d="M13.3638 4.63672L9.00017 9.00032L4.63657 13.3639"
+              stroke-width="1.01818"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+        <div class="modal__wrapper">
+          <div>
+            <div class="nonSuccessForm">
+              <div class="sm:grid grid-cols-8 gap-[1.125rem]">
+                <h4
+                  class="text-32sb sm:text-40sb text-be-10 mb-10 sm:mb-12 col-span-5"
+                >
+                  Укажите ваши контактные данные
+                </h4>
+              </div>
+              <form action="">
+                <div class="flex flex-col gap-[1.125rem] sm:grid grid-cols-8">
+                  <label class="input input--name hovered-line-anim col-span-4">
+                    <span class="input__title">Имя</span>
+                    <input class="input__item text-17" type="text" />
+                  </label>
+                  <label
+                    class="input input--phone hovered-line-anim col-span-4"
+                  >
+                    <span class="input__title">Телефон</span>
+                    <input class="input__item text-17" type="text" />
+                  </label>
+                  <label
+                    class="input input--email hovered-line-anim col-span-4"
+                  >
+                    <span class="input__title">Эл. адрес</span>
+                    <input class="input__item text-17" type="text" />
+                  </label>
+                  <label
+                    class="input input__field input--comment hovered-line-anim isTextarea col-span-4"
+                  >
+                    <span class="input__title"
+                      >Комментарии <span>(необязательно)</span></span
+                    >
+                    <textarea
+                      class="input__item text-17"
+                      type="text"
+                    ></textarea>
+                  </label>
+                </div>
+                <diva
+                  class="gap-[1.125rem] sm:grid grid-cols-8 sm:mt-20 items-center"
+                >
+                  <label
+                    class="custom-checkbox mx-auto mt-[3.75rem] sm:mt-0 form__politic col-span-4 h-fit"
+                  >
+                    <input type="checkbox" class="custom-checkbox__inp" />
+                    <span class="custom-checkbox__checkbox"></span>
+                    <p class="text-[#AAACC4] custom-checkbox__text">
+                      Нажимая “Отправить”
+                      <a href="#" class="text-be-10"
+                        >вы соглашаетесь <br class="sm:hidden" />с обработкой
+                        персональных данных</a
+                      >
+                    </p>
+                  </label>
+                  <button
+                    type="submit"
+                    class="button button--primary mt-4 sm:mt-0 form__submit col-start-6 col-span-3 w-full"
+                  >
+                    <span>Отправить</span>
+                  </button>
+                </diva>
+              </form>
+            </div>
+            <div class="SuccessForm">
+              <h4 class="text-32sb sm:text-40sb text-be-10 mb-6 sm:mb-10">
+                Заявка успешно <br />
+                отправлена!
+              </h4>
+              <p class="text-14 sm:text-17 mb-10 sm:mb-[4.5rem]">
+                Мы изучим ваш запрос и свяжемся <br />
+                с вами в ближайшее время!
+              </p>
+              <a href="#" class="w-full sm:w-fit button button--primary">
+                <span>К курсам</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal modal--right opened show product-modal" id="archOs">
+      <div class="modal__container">
+        <button class="modal__close">
+          <svg
+            viewBox="0 0 18 18"
+            fill="none"
+            xmlns="https://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13.3643 13.3633L8.97642 8.97544L4.63706 4.63608"
+              stroke-width="1.01818"
+              stroke-linecap="round"
+            />
+            <path
+              d="M13.3638 4.63672L9.00017 9.00032L4.63657 13.3639"
+              stroke-width="1.01818"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+        <div class="modal__wrapper">
+          <div>
+            <article class="flex flex-col gap-20 sm:gap">
+              <div>
+                <h3 class="text-32sb mb-6 sm:mb-10 text-be-10 sm:text-40sb">
+                  Архитектурный светодизайн
+                </h3>
+                <div class="text-14 sm:text-20m">
+                  <p>
+                    Данный курс посвящен архитектурному светодизайну. Во время
+                    прохождения курса вы познакомитесь с основами архитектурного
+                    светодизайна, узнаете выдающихся светодизайнеров и разберете
+                    особенности их проектов освещения. Эксперты познакомят вас с
+                    особенностями освещения различных архитектурных стилей. Вы
+                    разберете алгоритм работы светодизайнера и научитесь
+                    создавать концепции освещения, а также вечерние визуализации
+                    объектов.
+                  </p>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-24sb mb-4 sm:mb-6 text-be-10 sm:text-32sb">
+                  Программа
+                </h4>
+                <div class="text-14 sm:text-17m mb-8 sm:mb-10">
+                  <p>
+                    Данный курс посвящен архитектурному светодизайну. Во время
+                    прохождения курса вы познакомитесь с основами архитектурного
+                    светодизайна, узнаете выдающихся светодизайнеров и разберете
+                    особенности их проектов освещения.
+                  </p>
+                </div>
+                <ol class="flex gap-2 flex-col sm:gap-1">
+                  <li class="drop-down">
+                    <div class="drop-down__open">
+                      <h5 class="drop-down__title">Первый шаг</h5>
+                      <span></span>
+                    </div>
+                    <div class="drop-down__container">
+                      <div class="drop-down__container--2">
+                        <div class="drop-down__container--3">
+                          <div class="drop-down__container--4">
+                            <div class="drop-down__container--5">
+                              Данный курс посвящен архитектурному светодизайну.
+                              Во время прохождения курса вы познакомитесь с
+                              основами архитектурного светодизайна, узнаете
+                              выдающихся светодизайнеров и разберете особенности
+                              их проектов освещения.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="drop-down">
+                    <div class="drop-down__open">
+                      <h5 class="drop-down__title">Первый шаг</h5>
+                      <span></span>
+                    </div>
+                    <div class="drop-down__container">
+                      <div class="drop-down__container--2">
+                        <div class="drop-down__container--3">
+                          <div class="drop-down__container--4">
+                            <div class="drop-down__container--5">
+                              Данный курс посвящен архитектурному светодизайну.
+                              Во время прохождения курса вы познакомитесь с
+                              основами архитектурного светодизайна, узнаете
+                              выдающихся светодизайнеров и разберете особенности
+                              их проектов освещения.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="drop-down">
+                    <div class="drop-down__open">
+                      <h5 class="drop-down__title">Первый шаг</h5>
+                      <span></span>
+                    </div>
+                    <div class="drop-down__container">
+                      <div class="drop-down__container--2">
+                        <div class="drop-down__container--3">
+                          <div class="drop-down__container--4">
+                            <div class="drop-down__container--5">
+                              Данный курс посвящен архитектурному светодизайну.
+                              Во время прохождения курса вы познакомитесь с
+                              основами архитектурного светодизайна, узнаете
+                              выдающихся светодизайнеров и разберете особенности
+                              их проектов освещения.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="drop-down">
+                    <div class="drop-down__open">
+                      <h5 class="drop-down__title">Первый шаг</h5>
+                      <span></span>
+                    </div>
+                    <div class="drop-down__container">
+                      <div class="drop-down__container--2">
+                        <div class="drop-down__container--3">
+                          <div class="drop-down__container--4">
+                            <div class="drop-down__container--5">
+                              Данный курс посвящен архитектурному светодизайну.
+                              Во время прохождения курса вы познакомитесь с
+                              основами архитектурного светодизайна, узнаете
+                              выдающихся светодизайнеров и разберете особенности
+                              их проектов освещения.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ol>
+                <a href="#" class="button button--big mt-3 sm:mt-6"
+                  ><span>Записаться на пробный урок</span></a
+                >
+              </div>
+              <div>
+                <h3 class="text-24sb sm:text-32sb mb-4 sm:mb-10 text-be-10">
+                  Портфолио
+                </h3>
+                <div
+                  class="mb-2 sm:mb-6 sm:grid sm:grid-cols-8 gap-x-[1.125rem]"
+                >
+                  <div
+                    class="portfolio-desc flex flex-col sm:h-full mb-4 sm:mb-0 col-start-6 col-span-3"
+                  >
+                    <div class="portfolio-desc__slider">
+                      <div class="portfolio-desc__slide active">
+                        <p class="text-14 sm:text-17">
+                          За время обучения слушатели разрабатывают и реализуют
+                          проекты освещения зданий и участвуют в разработке
+                          концепций освещения целых городов (совместно с
+                          экспертами).
+                        </p>
+                      </div>
+                      <div class="portfolio-desc__slide">
+                        <p class="text-14 sm:text-17">
+                          За время обучения слушатели разрабатывают и реализуют
+                          проекты освещения зданий и участвуют в разработке
+                          концепций освещения целых городов (совместно с
+                          экспертами).
+                        </p>
+                      </div>
+                      <div class="portfolio-desc__slide">
+                        <p class="text-14 sm:text-17">
+                          За время обучения слушатели разрабатывают и реализуют
+                          проекты освещения зданий и участвуют в разработке
+                          концепций освещения целых городов (совместно с
+                          экспертами).
+                        </p>
+                      </div>
+                      <div class="portfolio-desc__slide">
+                        <p class="text-14 sm:text-17">
+                          За время обучения слушатели разрабатывают и реализуют
+                          проекты освещения зданий и участвуют в разработке
+                          концепций освещения целых городов (совместно с
+                          экспертами).
+                        </p>
+                      </div>
+                      <div class="portfolio-desc__slide">
+                        <p class="text-14 sm:text-17">
+                          За время обучения слушатели разрабатывают и реализуют
+                          проекты освещения зданий и участвуют в разработке
+                          концепций освещения целых городов (совместно с
+                          экспертами).
+                        </p>
+                      </div>
+                    </div>
+                    <div class="slider-buttons mt-8 sm:mt-auto">
+                      <div
+                        class="slider-button swiper-button-prev slider-button-prev"
+                      >
+                        <svg
+                          xmlns="https://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M20 12L5 12"
+                            stroke="#061143"
+                            stroke-width="1.4"
+                            stroke-linecap="round"
+                          />
+                          <path
+                            d="M9 17C9 17 4.5 12.2279 4.5 12C4.5 11.7721 9 7 9 7"
+                            stroke="#061143"
+                            stroke-width="1.4"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="slider-button swiper-button-next slider-button-next"
+                      >
+                        <svg
+                          xmlns="https://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M4 12L19 12"
+                            stroke="#061143"
+                            stroke-width="1.4"
+                            stroke-linecap="round"
+                          />
+                          <path
+                            d="M15 7C15 7 19.5 11.7721 19.5 12C19.5 12.2279 15 17 15 17"
+                            stroke="#061143"
+                            stroke-width="1.4"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="min-w-0 min-h-0 col-span-5 row-start-1">
+                    <div
+                      class="swiper h-[217px] sm:min-h-[23.3125rem] sm:h-full slider rounded-small slider-width-text"
+                      data-text="portfolio-desc"
+                      id="ourPortfolioArProj"
+                    >
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <img
+                            src="/public/pat.jpg"
+                            alt=""
+                            class="object-cover h-full w-full rounded-small"
+                          />
+                        </div>
+                        <div class="swiper-slide">
+                          <img
+                            src="/public/pat.jpg"
+                            alt=""
+                            class="object-cover h-full w-full rounded-small"
+                          />
+                        </div>
+                        <div class="swiper-slide">
+                          <img
+                            src="/public/pat.jpg"
+                            alt=""
+                            class="object-cover h-full w-full rounded-small"
+                          />
+                        </div>
+                        <div class="swiper-slide">
+                          <img
+                            src="/public/pat.jpg"
+                            alt=""
+                            class="object-cover h-full w-full rounded-small"
+                          />
+                        </div>
+                        <div class="swiper-slide">
+                          <img
+                            src="/public/pat.jpg"
+                            alt=""
+                            class="object-cover h-full w-full rounded-small"
+                          />
+                        </div>
+                      </div>
+                      <div class="slider-pag">
+                        <div
+                          class="slider-pag__container swiper-pagination"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-24sb sm:text-32sb mb-6 sm:mb-10 text-be-10">
+                  Для кого
+                </h3>
+                <ul
+                  class="flex flex-col gap-3 sm:grid grid-cols-8 sm:gap-[1.125rem]"
+                >
+                  <li class="rounded-small p-4 bg-dc-3 col-span-4">
+                    <h4
+                      class="text-17m sm:text-32sb mb-8 sm:mb-[7.125rem] text-be-10"
+                    >
+                      Студентам
+                    </h4>
+                    <p class="text-14 sm:text-17">
+                      Синтересом к светотехнике и архитектуре, стремящихся
+                      обрести комплексные знания в области освещения
+                    </p>
+                  </li>
+                  <li class="rounded-small p-4 bg-dc-3 col-span-4">
+                    <h4
+                      class="text-17m sm:text-32sb mb-8 sm:mb-[7.125rem] text-be-10"
+                    >
+                      Студентам
+                    </h4>
+                    <p class="text-14 sm:text-17">
+                      Синтересом к светотехнике и архитектуре, стремящихся
+                      обрести комплексные знания в области освещения
+                    </p>
+                  </li>
+                  <li class="rounded-small p-4 bg-dc-3 col-span-4">
+                    <h4
+                      class="text-17m sm:text-32sb mb-8 sm:mb-[7.125rem] text-be-10"
+                    >
+                      Студентам
+                    </h4>
+                    <p class="text-14 sm:text-17">
+                      Синтересом к светотехнике и архитектуре, стремящихся
+                      обрести комплексные знания в области освещения
+                    </p>
+                  </li>
+                  <li class="rounded-small p-4 bg-dc-3 col-span-4">
+                    <h4
+                      class="text-17m sm:text-32sb mb-8 sm:mb-[7.125rem] text-be-10"
+                    >
+                      Студентам
+                    </h4>
+                    <p class="text-14 sm:text-17">
+                      Синтересом к светотехнике и архитектуре, стремящихся
+                      обрести комплексные знания в области освещения
+                    </p>
+                  </li>
+                  <li class="rounded-small p-4 bg-dc-3 col-span-4">
+                    <h4
+                      class="text-17m sm:text-32sb mb-8 sm:mb-[7.125rem] text-be-10"
+                    >
+                      Студентам
+                    </h4>
+                    <p class="text-14 sm:text-17">
+                      Синтересом к светотехнике и архитектуре, стремящихся
+                      обрести комплексные знания в области освещения
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="text-24sb sm:text-32sb mb-6 sm:mb-10 text-be-10">
+                  Документ <br />
+                  об окончании
+                </h3>
+                <div
+                  class="bg-bk-10 rounded-small py-14 px-[2.375rem] text-20m hidden sm:block h-[16.375rem] sm:h-[25.0625rem]"
+                >
+                  <p class="max-w-[318px] text-bk-1">
+                    Удостоверение о повышении квалификации установленного
+                    образца.
+                  </p>
+                </div>
+                <a href="#" class="button button--big mt-3 sm:mt-6"
+                  ><span>Оставить заявку</span></a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
       </div>
     </div>
     <script type="module" src="/src/js/main.js"></script>

@@ -1,3 +1,5 @@
+import $ from "jquery";
+
 function setPartners(scrollset) {
   if ($(".partners-carousel").length > 0) {
     if ($(".line-scroll__cont").length > 0) {
@@ -83,7 +85,21 @@ function setTeachers(scrollset) {
   }
 }
 
+function setDrops(scrollset) {
+  $(".drop-down").each(function () {
+    const $this = $(this);
+    $this.find(".drop-down__open").on("click", function () {
+      $(".drop-down").not($this).removeClass("active");
+      $this.toggleClass("active");
+      setTimeout(function () {
+        scrollset.update();
+      }, 550);
+    });
+  });
+}
+
 export const setAnims = (scrollset) => {
   setPartners(scrollset);
   setTeachers(scrollset);
+  setDrops(scrollset);
 };

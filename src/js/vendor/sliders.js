@@ -1,15 +1,21 @@
 import Swiper from "swiper";
 import { Navigation, Pagination } from "swiper/modules";
+import $ from "jquery";
 
 export const setSliders = () => {
   $(".slider").each(function () {
-    const slider = new Swiper(`#${$(this).attr("id")}`, {
-      modules: [Pagination],
+    const $this = $(this);
+    const sliderId = $this.attr("id");
+    const $textSlider = $this.parents(".slider-width-text").prev();
+    const $textChild = $($textSlider).find(`.${$this.data("text")}__slide`);
+
+    const slider = new Swiper(`#${sliderId}`, {
+      modules: [Pagination, Navigation],
       slidesPerView: 1,
       spaceBetween: 18,
       loop: true,
       pagination: {
-        el: `#${$(this).attr("id")} .swiper-pagination`,
+        el: `#${sliderId} .swiper-pagination`,
         clickable: true,
       },
       navigation: {
@@ -18,45 +24,40 @@ export const setSliders = () => {
       },
     });
 
-    if ($(this).hasClass("slider-width-text")) {
-      const setActiveTextSlide = (ind) => {
-        $(`.${$(this).data("text")}__slide`).removeClass("active");
-        $(`.${$(this).data("text")}__slide`)
-          .eq(ind)
-          .addClass("active");
-      };
+    if ($this.hasClass("slider-width-text")) {
+      if ($this.hasClass("text-slider-active")) {
+        slider.on("transitionStart", () => {
+          $textChild.removeClass("active");
+          $textChild.eq(slider.realIndex).addClass("active");
+        });
+      }
 
-      $(`.${$(this).data("text")} .slider-button-next`).click(() => {
-        slider.slideNext();
-        setActiveTextSlide(slider.realIndex);
+      $($(`.${$this.data("text")} .slider-button-previous`)).on("click", () => {
+        slider.slidePrev();
       });
 
-      $(`.${$(this).data("text")} .slider-button-prev`).click(() => {
-        slider.slidePrev();
-        $(`.${$(this).data("text")}__slide`).removeClass("active");
-        setActiveTextSlide(slider.realIndex);
+      $($(`.${$this.data("text")} .slider-button-next`)).on("click", () => {
+        slider.slideNext();
       });
     }
   });
 
   $(".slider--v2").each(function () {
-    let pcSlides = 3;
-    if ($(this).hasClass("swiper--auto-slides")) {
-      pcSlides = "auto";
-    }
+    const $this = $(this);
+    const sliderId = $this.attr("id");
+    const pcSlides = $this.hasClass("swiper--auto-slides") ? "auto" : 3;
 
-    const slider = new Swiper(`#${$(this).attr("id")} .swiper`, {
+    new Swiper(`#${sliderId} .swiper`, {
       modules: [Pagination, Navigation],
       slidesPerView: "auto",
       spaceBetween: 18,
       pagination: {
-        el: `#${$(this).attr("id")} .swiper-pagination`,
+        el: `#${sliderId} .swiper-pagination`,
       },
       navigation: {
-        nextEl: `#${$(this).attr("id")} .slider-button-next`,
-        prevEl: `#${$(this).attr("id")} .slider-button-prev`,
+        nextEl: `#${sliderId} .slider-button-next`,
+        prevEl: `#${sliderId} .slider-button-prev`,
       },
-
       breakpoints: {
         640: {
           slidesPerView: pcSlides,
@@ -65,3 +66,73 @@ export const setSliders = () => {
     });
   });
 };
+
+// export const setSliders = () => {
+//   $(".slider").each(function () {
+//     const $this = $(this);
+
+//     const slider = new Swiper(`#${$(this).attr("id")}`, {
+//       modules: [Pagination],
+//       slidesPerView: 1,
+//       spaceBetween: 18,
+//       loop: true,
+//       pagination: {
+//         el: `#${$(this).attr("id")} .swiper-pagination`,
+//         clickable: true,
+//       },
+//       navigation: {
+//         nextEl: null,
+//         prevEl: null,
+//       },
+//     });
+
+//     if ($this.hasClass("slider-width-text")) {
+//       if ($this.hasClass("text-slider-active")) {
+//         const $textChild = $this
+//           .parent()
+//           .prev()
+//           .find(`.${$this.data("text")}__slide`);
+//         slider.on("transitionStart", function () {
+//           $textChild.removeClass("active");
+//           $textChild.eq(slider.realIndex).addClass("active");
+//         });
+//       }
+
+//       $(`.${$this.data("text")} .slider-button-next`).on("click", () => {
+//         slider.slideNext();
+//       });
+
+//       $(`.${$this.data("text")} .slider-button-prev`).on("click", () => {
+//         slider.slidePrev();
+//       });
+//     }
+//   });
+
+//   $(".slider--v2").each(function () {
+//     const $this = $(this);
+
+//     let pcSlides = 3;
+//     if ($this.hasClass("swiper--auto-slides")) {
+//       pcSlides = "auto";
+//     }
+
+//     const slider = new Swiper(`#${$this.attr("id")} .swiper`, {
+//       modules: [Pagination, Navigation],
+//       slidesPerView: "auto",
+//       spaceBetween: 18,
+//       pagination: {
+//         el: `#${$this.attr("id")} .swiper-pagination`,
+//       },
+//       navigation: {
+//         nextEl: `#${$this.attr("id")} .slider-button-next`,
+//         prevEl: `#${$this.attr("id")} .slider-button-prev`,
+//       },
+
+//       breakpoints: {
+//         640: {
+//           slidesPerView: pcSlides,
+//         },
+//       },
+//     });
+//   });
+// };

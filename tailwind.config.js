@@ -88,6 +88,7 @@ export default {
         {
           lineHeight: "1.45em",
           letterSpacing: "-0.01em",
+          fontWeight: "400",
         },
       ],
       "20m": [
@@ -127,6 +128,7 @@ export default {
         {
           lineHeight: "1.411764705882353em",
           letterSpacing: "-0.01em",
+          fontWeight: "400",
         },
       ],
       "15m": [
@@ -148,7 +150,9 @@ export default {
       14: [
         "0.875rem",
         {
+          letterSpacing: "normal",
           lineHeight: "1.357142857142857em",
+          fontWeight: "400",
         },
       ],
       "13m": [
@@ -164,12 +168,15 @@ export default {
         {
           lineHeight: "1.384615384615385em",
           letterSpacing: "0.01em",
+          fontWeight: "400",
         },
       ],
       12: [
         "0.75rem",
         {
+          letterSpacing: "normal",
           lineHeight: "1.333333333333333em",
+          fontWeight: "400",
         },
       ],
       "11eb": [

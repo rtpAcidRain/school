@@ -1,4 +1,5 @@
 import Inputmask from "inputmask";
+import $ from "jquery";
 
 export function setForms() {
   if ($(".input").length > 0) {
@@ -38,22 +39,21 @@ export function setForms() {
     }
   }
 
-  //   if ($("textarea").length > 0) {
-  //     const textareas = $("textarea");
+  if ($("textarea").length > 0) {
+    const textareas = $("textarea");
+    function setTextarea(el) {
+      if (el.val().trim().length < 1) {
+        el.css("height", "calc(0.75rem + var(--plusheight))");
+      } else {
+        el.css("height", el.get(0).scrollHeight + "px");
+      }
+    }
 
-  //     textareas.each(function () {
-  //       $(this).on("input", function () {
-  //         if ($(this).val().trim().length < 1) {
-  //           $(this).css(
-  //             "height",
-  //             "calc(calc(var(--scale-rem) * 0.95) + var(--plusheight))"
-  //           );
-  //         } else {
-  //           $(this).css("height", $(this).get(0).scrollHeight + "px");
-  //         }
-  //       });
-  //     });
-  //   }
+    textareas.each(function () {
+      $(this).on("input", () => setTextarea($(this)));
+      $(window).on("resize", () => setTextarea($(this)));
+    });
+  }
 
   //   if ($(".check__container").length > 0) {
   //     const checks = $(".check__container");

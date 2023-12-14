@@ -20,6 +20,7 @@
   "dependencies": {
     "gsap": "^3.12.3",
     "inputmask": "^5.0.8",
+    "jquery": "^3.7.1",
     "locomotive-scroll": "^4.1.4",
     "swiper": "^11.0.5",
     "tailwind-scrollbar-hide": "^1.1.7"
