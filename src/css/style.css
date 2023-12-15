@@ -914,7 +914,7 @@ pre {
 }
 
 .modal {
-  @apply transition-colors;
+  @apply transition-colors duration-500;
   width: 100vw;
   height: 100vh;
   height: 100dvh;
@@ -951,6 +951,7 @@ pre {
 .modal__container {
   @apply bg-w10;
   border-radius: 24px 24px 0px 0px;
+  transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .modal--right {
@@ -962,6 +963,7 @@ pre {
   height: 100%;
   display: flex;
   @apply px-5 pt-20 sm:px-10 sm:pt-36 max-h-[650px] sm:max-h-full  w-full;
+  transform: translateY(100%);
 }
 
 .product-modal .modal__container {
@@ -984,6 +986,10 @@ pre {
   z-index: 11;
 }
 
+.modal.show .modal__container {
+  transform: translate(0);
+}
+
 .modal.show {
   @apply bg-mb;
 }
@@ -995,6 +1001,7 @@ pre {
 
   .modal--right .modal__container {
     max-width: 52.4375rem;
+    transform: translateX(100%);
   }
 
   .modal--right.product-modal .modal__container {
