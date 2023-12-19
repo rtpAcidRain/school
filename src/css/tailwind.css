@@ -21,7 +21,7 @@
 
 @screen sm {
   .sm\:text-24m {
-    @apply font-inter;
+    @apply !font-inter;
   }
 
   .sm\:text-11eb {

@@ -45,9 +45,11 @@ function setPartners(scrollset) {
       }
     }
 
-    scrollset.on("scroll", ({}) => {
-      a();
-    });
+    if (!!scrollset) {
+      scrollset.on("scroll", ({}) => {
+        a();
+      });
+    }
 
     $(window).on("load resize", function () {
       a();
@@ -75,13 +77,14 @@ function setTeachers(scrollset) {
     $("body").click(function () {
       $(".teachers-slide").removeClass("active");
     });
-
-    $(".teachers-slide__info__desk").on("mouseenter", function () {
-      scrollset.stop();
-    });
-    $(".teachers-slide__info__desk").on("mouseleave", function () {
-      scrollset.start();
-    });
+    if (!!scrollset) {
+      $(".teachers-slide__info__desk").on("mouseenter", function () {
+        scrollset.stop();
+      });
+      $(".teachers-slide__info__desk").on("mouseleave", function () {
+        scrollset.start();
+      });
+    }
   }
 }
 
@@ -91,10 +94,67 @@ function setDrops(scrollset) {
     $this.find(".drop-down__open").on("click", function () {
       $(".drop-down").not($this).removeClass("active");
       $this.toggleClass("active");
-      setTimeout(function () {
-        scrollset.update();
-      }, 550);
+      if (!!scrollset) {
+        setTimeout(function () {
+          scrollset.update();
+        }, 550);
+      }
     });
+  });
+}
+
+function setHeader(scrollset) {
+  let onScroll = false;
+  let time;
+  function hideHeader() {
+    clearTimeout(time);
+    $(".header").css("top", -$(".header").height() + "px");
+    $(".header").css("transition", "top 0.4s ease");
+    $(".header").css("top", "0px");
+    time = setTimeout(function () {
+      $(".header").css("transition", "");
+    }, 400);
+    $(".header").addClass("scroll hide-subnav");
+
+    onScroll = true;
+  }
+
+  function showHeader() {
+    clearTimeout(time);
+    $(".header").css("transition", "");
+
+    $(".header").removeClass("hide-subnav");
+    $(".header").removeClass("scroll");
+    onScroll = false;
+  }
+  // console.log($(window).offset())
+  scrollset.on("scroll", ({ scroll, direction }) => {
+    if (direction === "down") {
+      if (scroll.y <= $(".header").height()) {
+        $(".header").css("top", -scroll.y + "px");
+      } else if (
+        scroll.y <= $(window).height() - $(".header").height() &&
+        !$(".header").hasClass("scroll hide-subnav")
+      ) {
+        $(".header").css("top", "-100%");
+        showHeader();
+      } else {
+        if (!onScroll) {
+          hideHeader();
+        }
+      }
+    } else {
+      if (scroll.y <= $(".header").height()) {
+        if ($(".header").hasClass("scroll hide-subnav")) {
+          $(".header").css("top", "0px");
+          if (scroll.y === 0) {
+            showHeader();
+          }
+        } else {
+          $(".header").css("top", -scroll.y + "px");
+        }
+      }
+    }
   });
 }
 
@@ -102,4 +162,7 @@ export const setAnims = (scrollset) => {
   setPartners(scrollset);
   setTeachers(scrollset);
   setDrops(scrollset);
+  if (!!scrollset) {
+    setHeader(scrollset);
+  }
 };

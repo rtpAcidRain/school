@@ -4,11 +4,15 @@ import { setForms } from "./vendor/forms";
 import { setModals } from "./vendor/modals";
 import { scroll } from "./vendor/scroll";
 import { setSliders } from "./vendor/sliders";
+import $ from "jquery";
 
 document.addEventListener(
   "DOMContentLoaded",
   function () {
-    const mainScroll = scroll(".main-scroll");
+    let mainScroll = null;
+    if ($("[data-scroll-container]").length > 0) {
+      mainScroll = scroll(".main-scroll");
+    }
     setForms();
     setAnims(mainScroll);
     setSliders();

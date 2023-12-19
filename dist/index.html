@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" class="isSomethinOpened">
+<html lang="en" class="">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      href="https://edu.svet-expert.com/include/landing/css/swiper.css"
     />
-    <title>Vite App</title>
-    <script type="module" crossorigin src="/assets/index-qUtpUeFb.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-Qa1xo1bM.css">
+    <title>Angels School</title>
+    <script type="module" crossorigin src="/assets/index-ZzhvQsSI.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-N3ofyNP1.css">
   </head>
   <body>
     <div class="page">
@@ -80,7 +80,10 @@
             </span>
           </a>
           <div class="flex items-center gap-10">
-            <a href="#" class="text-17 flex items-center justify-center gap-2">
+            <a
+              href="http://edu.svet-expert.com/login/index.php"
+              class="text-17 flex items-center justify-center gap-2"
+            >
               <svg
                 class="w-[1.411764705882353em] h-[1.411764705882353em]"
                 viewBox="0 0 24 24"
@@ -231,6 +234,7 @@
         href="#"
         class="grid-net__el bg-dc-3 bg-cover bg-c bg-no-repeat"
         style="background-image: url('../../../public/arch-o.jpg')"
+        data-modal="#archOs"
       >
         <div>
           <h4 class="grid-net__el__title">
@@ -239,12 +243,13 @@
           </h4>
           <div class="button button--tertiary">Узнать подробнее</div>
         </div>
-        <div class="grid-net__el__inf">6 месяцев</div>
+        <div class="grid-net__el__inf !text-[#E3E3E3]">6 месяцев</div>
       </a>
       <a
         href="#"
         class="grid-net__el bg-dc-v bg-cover bg-c bg-no-repeat"
         style="background-image: url('../../../public/land-o.jpg')"
+        data-modal="#archOs"
       >
         <div>
           <h4 class="grid-net__el__title">
@@ -255,7 +260,11 @@
         </div>
         <div class="grid-net__el__inf">6 месяцев</div>
       </a>
-      <a href="#" class="grid-net__el bg-dc-y bg-cover bg-c bg-no-repeat">
+      <a
+        href="#"
+        data-modal="#archOs"
+        class="grid-net__el bg-dc-y bg-cover bg-c bg-no-repeat"
+      >
         <div>
           <h4 class="grid-net__el__title">
             Введение в профессию Светодизайнер
@@ -646,7 +655,7 @@
   <section data-scroll-section class="container flex">
     <a
       href="#"
-      class="rounded-small welcome-block py-10 px-[1.625rem] text-center sm:text-left sm:p-[2.1875rem] block w-80 sm:w-full m-auto sm:m-0 sm:pb-[3.25rem] sm:flex flex-col"
+      class="rounded-small welcome-block py-10 px-[1.625rem] text-center sm:text-left sm:p-[2.1875rem] block w-full sm:w-full m-auto sm:m-0 sm:pb-[3.25rem] sm:flex flex-col"
     >
       <h2 class="text-27sb mb-3 text-be-10">Приходите учиться</h2>
       <p class="text-14">
@@ -1610,7 +1619,7 @@
         </div>
       </div>
     </div>
-    <div class="modal modal--right opened show product-modal" id="archOs">
+    <div class="modal modal--right product-modal" id="archOs">
       <div class="modal__container">
         <button class="modal__close">
           <svg
@@ -1748,7 +1757,10 @@
                     </div>
                   </li>
                 </ol>
-                <a href="#" class="button button--big mt-3 sm:mt-6"
+                <a
+                  href="#"
+                  data-modal="#modalForm"
+                  class="button button--big mt-3 sm:mt-6"
                   ><span>Записаться на пробный урок</span></a
                 >
               </div>

@@ -55,6 +55,17 @@ export function setForms() {
     });
   }
 
+  $(".show-pass").each(function () {
+    $(this).on("click", function () {
+      const inpT = $(this).prev();
+      if (inpT.attr("type") === "password") {
+        inpT.attr("type", "text");
+      } else {
+        inpT.attr("type", "password");
+      }
+    });
+  });
+
   //   if ($(".check__container").length > 0) {
   //     const checks = $(".check__container");
 

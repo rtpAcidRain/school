@@ -1,7 +1,6 @@
 import LocomotiveScroll from "locomotive-scroll";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import $ from "jquery";
 
 export function scroll(selector) {
   gsap.registerPlugin(ScrollTrigger);
