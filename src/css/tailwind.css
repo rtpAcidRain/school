@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .text-24m {
-  @apply font-inter sm:font-manrope;
+  @apply !font-inter sm:!font-manrope;
 }
 
 .text-11eb {

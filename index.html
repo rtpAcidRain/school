@@ -7,14 +7,19 @@
       rel="stylesheet"
       href="https://edu.svet-expert.com/include/landing/css/swiper.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://edu.svet-expert.com/include/landing/css/reset.css"
+    />
     <script type="module" src="./locals.css"></script>
     <title>Angels School</title>
   </head>
   <body>
     <div class="page">
-      {{> components/header }}
+      <!-- {{> components/moodle-header }} -->
 
       <div class="main-scroll" data-scroll-container>
+        {{> components/header }}
         <main>{{> pages/mainpage }}</main>
         {{> components/footer }}
       </div>

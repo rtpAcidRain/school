@@ -37,7 +37,7 @@
         </p>
       </div>
       <div class="flex-1 h-[271px] sm:h-[30.375rem] min-w-0 min-h-0">
-        <div class="swiper slider rounded-small h-full" id="ourMission">
+        <div class="swiper slider rounded-small h-full reels" id="ourMission">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <img
@@ -547,7 +547,7 @@
         технологии освещения.
       </p>
     </div>
-    <div class="slider--v2 swiper--auto-slides" id="employument">
+    <div class="slider--v2 swiper--auto-slides cursor-grab" id="employument">
       <div class="swiper container overflow-visible">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
@@ -1208,7 +1208,7 @@
       </h2>
       <form action="" class="form footer-form">
         <div
-          class="flex flex-col gap-y-8 gap-x-[1.875rem] lg:flex-row form__inputs"
+          class="flex flex-col gap-y-8 gap-x-[1.125rem] lg:flex-row form__inputs"
         >
           <label class="input input--name hovered-line-anim">
             <span class="input__title">Имя</span>
@@ -1222,26 +1222,31 @@
             <span class="input__title">Эл. адрес</span>
             <input class="input__item text-17" type="text" />
           </label>
+          <label class="input input--comment hovered-line-anim">
+            <span class="input__title">Комментарий</span>
+            <input class="input__item text-17" type="text" />
+          </label>
         </div>
-        <label
-          class="custom-checkbox mx-auto mt-[3.75rem] lg:mt-[1.875rem] form__politic"
+        <div
+          class="lg:flex justify-center items-center gap-10 mt-[3.75rem] lg:mt-[1.875rem]"
         >
-          <input type="checkbox" class="custom-checkbox__inp" />
-          <span class="custom-checkbox__checkbox"></span>
-          <p class="text-[#AAACC4] custom-checkbox__text">
-            Нажимая “Отправить”
-            <a href="#" class="text-be-10"
-              >вы соглашаетесь <br class="sm:hidden" />с обработкой персональных
-              данных</a
-            >
-          </p>
-        </label>
-        <button
-          type="submit"
-          class="button button--primary mt-4 lg:mt-0 w-full lg:w-fit form__submit"
-        >
-          <span>Спросить</span>
-        </button>
+          <label class="custom-checkbox form__politic">
+            <input type="checkbox" class="custom-checkbox__inp" />
+            <span class="custom-checkbox__checkbox"></span>
+            <p class="text-[#AAACC4] custom-checkbox__text lg:max-w-[20.5rem]">
+              Нажимая “Отправить”
+              <a href="#" class="text-be-10"
+                >вы соглашаетесь <br />с обработкой персональных данных</a
+              >
+            </p>
+          </label>
+          <button
+            type="submit"
+            class="button button--primary mt-4 lg:mt-0 w-full lg:w-[14.125rem] form__submit"
+          >
+            <span>Спросить</span>
+          </button>
+        </div>
       </form>
     </div>
   </section>

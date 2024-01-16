@@ -1,5 +1,5 @@
 import Swiper from "swiper";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import $ from "jquery";
 
 export const setSliders = () => {
@@ -8,16 +8,18 @@ export const setSliders = () => {
     const sliderId = $this.attr("id");
     const $textSlider = $this.parents(".slider-width-text").prev();
     const $textChild = $($textSlider).find(`.${$this.data("text")}__slide`);
+    const autoplay = $(this).hasClass("reels") ? { delay: 3000 } : false;
 
     const slider = new Swiper(`#${sliderId}`, {
-      modules: [Pagination, Navigation],
+      modules: [Pagination, Navigation, Autoplay],
       slidesPerView: 1,
       spaceBetween: 18,
-      loop: true,
+      loop: !$(this).hasClass("reels"),
       pagination: {
         el: `#${sliderId} .swiper-pagination`,
         clickable: true,
       },
+      autoplay: autoplay,
       navigation: {
         nextEl: null,
         prevEl: null,

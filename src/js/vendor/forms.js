@@ -9,10 +9,10 @@ export function setForms() {
 
     function setInputs(el) {
       if (el.find(".input__item").val().trim().length < 1) {
-        el.removeClass("active");
-      } else {
-        inputOnClick(el);
+        return el.removeClass("active");
       }
+
+      return inputOnClick(el);
     }
 
     let inp = $(".input");
@@ -26,6 +26,10 @@ export function setForms() {
       });
 
       $this.find(".input__item").on("blur", function () {
+        setInputs($this);
+      });
+
+      $this.find(".input__item").on("change", function () {
         setInputs($this);
       });
     });

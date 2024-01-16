@@ -103,66 +103,66 @@ function setDrops(scrollset) {
   });
 }
 
-function setHeader(scrollset) {
-  let onScroll = false;
-  let time;
-  function hideHeader() {
-    clearTimeout(time);
-    $(".header").css("top", -$(".header").height() + "px");
-    $(".header").css("transition", "top 0.4s ease");
-    $(".header").css("top", "0px");
-    time = setTimeout(function () {
-      $(".header").css("transition", "");
-    }, 400);
-    $(".header").addClass("scroll hide-subnav");
+// function setHeader(scrollset) {
+//   let onScroll = false;
+//   let time;
+//   function hideHeader() {
+//     clearTimeout(time);
+//     $(".header").css("top", -$(".header").height() + "px");
+//     $(".header").css("transition", "top 0.4s ease");
+//     $(".header").css("top", "0px");
+//     time = setTimeout(function () {
+//       $(".header").css("transition", "");
+//     }, 400);
+//     $(".header").addClass("scroll hide-subnav");
 
-    onScroll = true;
-  }
+//     onScroll = true;
+//   }
 
-  function showHeader() {
-    clearTimeout(time);
-    $(".header").css("transition", "");
+//   function showHeader() {
+//     clearTimeout(time);
+//     $(".header").css("transition", "");
 
-    $(".header").removeClass("hide-subnav");
-    $(".header").removeClass("scroll");
-    onScroll = false;
-  }
-  // console.log($(window).offset())
-  scrollset.on("scroll", ({ scroll, direction }) => {
-    if (direction === "down") {
-      if (scroll.y <= $(".header").height()) {
-        $(".header").css("top", -scroll.y + "px");
-      } else if (
-        scroll.y <= $(window).height() - $(".header").height() &&
-        !$(".header").hasClass("scroll hide-subnav")
-      ) {
-        $(".header").css("top", "-100%");
-        showHeader();
-      } else {
-        if (!onScroll) {
-          hideHeader();
-        }
-      }
-    } else {
-      if (scroll.y <= $(".header").height()) {
-        if ($(".header").hasClass("scroll hide-subnav")) {
-          $(".header").css("top", "0px");
-          if (scroll.y === 0) {
-            showHeader();
-          }
-        } else {
-          $(".header").css("top", -scroll.y + "px");
-        }
-      }
-    }
-  });
-}
+//     $(".header").removeClass("hide-subnav");
+//     $(".header").removeClass("scroll");
+//     onScroll = false;
+//   }
+//   // console.log($(window).offset())
+//   scrollset.on("scroll", ({ scroll, direction }) => {
+//     if (direction === "down") {
+//       if (scroll.y <= $(".header").height()) {
+//         $(".header").css("top", -scroll.y + "px");
+//       } else if (
+//         scroll.y <= $(window).height() - $(".header").height() &&
+//         !$(".header").hasClass("scroll hide-subnav")
+//       ) {
+//         $(".header").css("top", "-100%");
+//         showHeader();
+//       } else {
+//         if (!onScroll) {
+//           hideHeader();
+//         }
+//       }
+//     } else {
+//       if (scroll.y <= $(".header").height()) {
+//         if ($(".header").hasClass("scroll hide-subnav")) {
+//           $(".header").css("top", "0px");
+//           if (scroll.y === 0) {
+//             showHeader();
+//           }
+//         } else {
+//           $(".header").css("top", -scroll.y + "px");
+//         }
+//       }
+//     }
+//   });
+// }
 
 export const setAnims = (scrollset) => {
   setPartners(scrollset);
   setTeachers(scrollset);
   setDrops(scrollset);
-  if (!!scrollset) {
-    setHeader(scrollset);
-  }
+  // if (!!scrollset) {
+  //   setHeader(scrollset);
+  // }
 };
