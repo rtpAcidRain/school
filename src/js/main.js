@@ -16,7 +16,7 @@ document.addEventListener(
     setForms();
     setAnims(mainScroll);
     setSliders();
-    setModals();
+    setModals(mainScroll);
   },
   false
 );

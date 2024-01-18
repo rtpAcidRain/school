@@ -2,8 +2,8 @@ import Swiper from "swiper";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import $ from "jquery";
 
-export const setSliders = () => {
-  $(".slider").each(function () {
+export const setActiallySlider = (els) => {
+  els.each(function () {
     const $this = $(this);
     const sliderId = $this.attr("id");
     const $textSlider = $this.parents(".slider-width-text").prev();
@@ -17,7 +17,7 @@ export const setSliders = () => {
       loop: !$(this).hasClass("reels"),
       pagination: {
         el: `#${sliderId} .swiper-pagination`,
-        clickable: true,
+        clickable: !$(this).hasClass("reels"),
       },
       autoplay: autoplay,
       navigation: {
@@ -34,7 +34,7 @@ export const setSliders = () => {
         });
       }
 
-      $($(`.${$this.data("text")} .slider-button-previous`)).on("click", () => {
+      $($(`.${$this.data("text")} .slider-button-prev`)).on("click", () => {
         slider.slidePrev();
       });
 
@@ -43,7 +43,10 @@ export const setSliders = () => {
       });
     }
   });
+};
 
+export const setSliders = () => {
+  setActiallySlider($(".slider"));
   $(".slider--v2").each(function () {
     const $this = $(this);
     const sliderId = $this.attr("id");

@@ -126,7 +126,7 @@
         </div>
       </div>
     </div>
-    <div class="modal modal--right product-modal" id="archOs">
+    <div class="modal modal--right product-modal loading" id="archOs">
       <div class="modal__container">
         <button class="modal__close">
           <svg
@@ -147,8 +147,36 @@
           </svg>
         </button>
         <div class="modal__wrapper">
-          <div>
-            <article class="flex flex-col gap-20 sm:gap">
+          <div class="skeleton">
+            <div class="skeleton__container">
+              <div class="skeleton-heading skeleton-main-heading"></div>
+              <div class="skeleton-text skeleton-main-text">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <div class="skeleton__container">
+              <div class="skeleton-heading"></div>
+              <div class="skeleton-text mb-8 sm:mb-10">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="skeleton-drop-list">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <div class="skeleton-big-button"></div>
+            </div>
+          </div>
+          <div id="productInner">
+            <!-- <article class="flex flex-col gap-20 sm:gap">
               <div>
                 <h3 class="text-32sb mb-6 sm:mb-10 text-be-10 sm:text-40sb">
                   Архитектурный светодизайн
@@ -505,7 +533,7 @@
                   ><span>Оставить заявку</span></a
                 >
               </div>
-            </article>
+            </article> -->
           </div>
         </div>
       </div>

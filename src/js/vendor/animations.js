@@ -88,11 +88,11 @@ function setTeachers(scrollset) {
   }
 }
 
-function setDrops(scrollset) {
-  $(".drop-down").each(function () {
+export function setDrops(els, scrollset) {
+  els.each(function () {
     const $this = $(this);
     $this.find(".drop-down__open").on("click", function () {
-      $(".drop-down").not($this).removeClass("active");
+      els.not($this).removeClass("active");
       $this.toggleClass("active");
       if (!!scrollset) {
         setTimeout(function () {
@@ -161,7 +161,7 @@ function setDrops(scrollset) {
 export const setAnims = (scrollset) => {
   setPartners(scrollset);
   setTeachers(scrollset);
-  setDrops(scrollset);
+  setDrops($(".drop-down"), scrollset);
   // if (!!scrollset) {
   //   setHeader(scrollset);
   // }
