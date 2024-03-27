@@ -14,6 +14,10 @@
   "devDependencies": {
     "autoprefixer": "^10.4.16",
     "cssnano": "^6.0.3",
+    "postcss": "^8.4.33",
+    "postcss-cli": "^11.0.0",
+    "postcss-combine-media-query": "^1.0.1",
+    "tailwind-scrollbar-hide": "^1.1.7",
     "tailwindcss": "^3.3.6",
     "vite": "^5.0.0",
     "vite-plugin-handlebars": "^1.6.0"
@@ -23,7 +27,6 @@
     "inputmask": "^5.0.8",
     "jquery": "^3.7.1",
     "locomotive-scroll": "^4.1.4",
-    "swiper": "^11.0.5",
-    "tailwind-scrollbar-hide": "^1.1.7"
+    "swiper": "^11.0.5"
   }
 }

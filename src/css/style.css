@@ -73,7 +73,10 @@ html.has-scroll-smooth body {
   padding-top: 12.5rem;
   padding-bottom: 1.25rem;
   margin-top: auto;
-  @screen sm {
+}
+
+@screen sm {
+  .footer {
     padding-bottom: 1.5rem;
   }
 }
@@ -101,8 +104,10 @@ html.has-scroll-smooth body {
   -moz-backface-visibility: hidden;
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
+}
 
-  @screen sm {
+@screen sm {
+  .button {
     --py: 0.875rem;
   }
 }
@@ -138,8 +143,10 @@ html.has-scroll-smooth body {
   @apply bg-be-6 text-w10 relative border-0;
   --py: 0.625rem;
   --px: 1.5rem;
+}
 
-  @screen sm {
+@screen sm {
+  .button--primary {
     --py: 0.9375rem;
   }
 }
@@ -299,8 +306,10 @@ html.has-scroll-smooth body {
   @apply w-auto text-17m sm:text-24m relative rounded-extrasmall sm:rounded-small bg-be-6 text-w10 border-none hover:text-be-6  focus:text-w10  active:text-w10;
   --py: 1.125rem;
   --px: 1.4375rem;
+}
 
-  @screen sm {
+@screen sm {
+  .button--big {
     --py: 1.75rem;
   }
 }
@@ -309,8 +318,10 @@ html.has-scroll-smooth body {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+}
 
-  @screen sm {
+@screen sm {
+  .grid-net {
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
     column-gap: 1.125rem;
@@ -321,8 +332,10 @@ html.has-scroll-smooth body {
 .grid-net__el {
   @apply rounded-small p-4 sm:p-[2.625rem] flex flex-col justify-between;
   height: 262px;
+}
 
-  @screen sm {
+@screen sm {
+  .grid-net__el {
     grid-column: span 6 / span 6;
     height: 32.3125rem;
   }
@@ -336,8 +349,8 @@ html.has-scroll-smooth body {
   @apply text-14 sm:text-20m text-bk-8;
 }
 
-.grid-net__el:nth-child(odd):last-child {
-  @screen sm {
+@screen sm {
+  .grid-net__el:nth-child(odd):last-child {
     height: 27.75rem;
     grid-column-start: 1;
     grid-column-end: -1;
@@ -986,8 +999,10 @@ pre {
   width: 236px;
   min-height: 280px;
   height: auto;
+}
 
-  @screen sm {
+@screen sm {
+  .teachers-slide {
     width: auto;
     height: 22.375rem;
   }

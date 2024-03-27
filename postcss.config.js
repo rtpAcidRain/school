@@ -2,6 +2,9 @@ export default {
   plugins: {
     tailwindcss: {},
     autoprefixer: {},
-    // cssnano: { preset: "advanced" },
+    cssnano: {
+      preset: "cssnano-preset-advanced",
+    },
+    "postcss-combine-media-query": {},
   },
 };

@@ -199,7 +199,6 @@ export default {
     colors: {
       transparent: "transparent",
       w10: "#FFFFFF",
-
       be: {
         10: "#061143",
         9: "#051A75",
